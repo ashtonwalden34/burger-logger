@@ -6,14 +6,18 @@ var orm = {
     selectAll: function() {
         var queryString = "SELECT * FROM burger";
         connection.query(queryString, function(err, result) {
-            if (err) throw err;
+            if (err) {
+                throw err;
+            }
             console.log(result);
         });
     },
     insertOne: function(colToSearch) {
         var queryString = "INSERT INTO burger";
         connection.query(queryString, function(err, result) {
-            if (err) throw err;
+            if (err) {
+                throw err;
+            }
             console.log(result);
         });
     },
@@ -21,7 +25,9 @@ var orm = {
         // may be "UPDATE burger SET ? WHERE ?"
         var queryString = "UPDATE burger SET ?? = ? WHERE ?? = ?"
         connection.query(queryString, [colToUpdate, newVal, colToSearch, oldVal], function(err, result) {
-            if (err) throw err
+            if (err) {
+                throw err
+            }
             console.log(result)
         });
     }
