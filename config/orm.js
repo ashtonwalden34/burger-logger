@@ -66,7 +66,7 @@ var orm = {
             cb(result);
         });
     },
-    updateOne: function(colToUpdate, keyValues, condition, cb) {
+    updateOne: function(keyValues, condition, cb) {
         var queryString = "INSERT INTO burger SET "
             + sqlPair(keyValues) + " WHERE "
             + condition;
