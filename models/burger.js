@@ -2,7 +2,7 @@
 const orm = require(".././config/orm");
 
 // code to call orm functions using specific input
-var cat = {
+var burger = {
     selectAll: function(cb) {
         orm.selectAll(function(res) {
             cb(res);
@@ -25,5 +25,5 @@ var cat = {
     }
 };
 
-// export -- ???
-modules.export(burger.js)
+// exports burger object
+modules.export = burger;
