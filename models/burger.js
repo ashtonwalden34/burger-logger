@@ -1,5 +1,5 @@
 // requires orm object from orm.js
-const orm = require(".././config/orm");
+const orm = require("../config/orm");
 
 // code to call orm functions using specific input
 var burger = {
@@ -13,17 +13,17 @@ var burger = {
             cb(res);
         });
     },
-    updateOne: function(keyValues, condition, cb) {
-        orm.updateOne(keyValues, conditon, function(res) {
+    updateOne: function(keyValues, burgerId, cb) {
+        orm.updateOne(keyValues, burgerId, function(res) {
             cb(res);
         });
     },
-    deleteOne: function(condition, cb) {
-        orm.deleteOne(condition, function(res) {
+    deleteOne: function(burgerId, cb) {
+        orm.deleteOne(burgerId, function(res) {
             cb(res)
         });
     }
 };
 
 // exports burger object
-modules.export = burger;
+module.exports = burger;

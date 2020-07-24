@@ -12,4 +12,4 @@ CREATE TABLE burgers (
 );
 
 -- selects all items from burger table
-SELECT * FROM burger;
+SELECT * FROM burgers;

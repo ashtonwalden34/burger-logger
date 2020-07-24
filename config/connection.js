@@ -21,4 +21,4 @@ connection.connect(function(err) {
 });
 
 // exports connection object
-module.exports(connection);
+module.exports = connection;

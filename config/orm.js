@@ -40,7 +40,8 @@ function sqlPair(object) {
 // object to hold all MySQL functions
 var orm = {
     selectAll: function(cb) {
-        var queryString = "SELECT * FROM burger";
+        var queryString = "SELECT * FROM burgers";
+        // if there is an error it will console log or it will console.log the result
         connection.query(queryString, function(err, result) {
             if (err) {
                 throw err;
@@ -50,29 +51,28 @@ var orm = {
         });
     },
     insertOne: function(colToSearch, values, cb) {
-        var queryString = "INSERT INTO burger (" 
+        var queryString = "INSERT INTO burgers (" 
             + colToSearch.toString() 
             + ") VALUES (" 
             + qmString(values.length) + ")";
 
         console.log(queryString);
-            
+        // if there is an error it will console log or it will console.log the result 
         connection.query(queryString, values, function(err, result) {
             if (err) {
                 throw err;
             }
-
             console.log(result);
             cb(result);
         });
     },
-    updateOne: function(keyValues, condition, cb) {
-        var queryString = "INSERT INTO burger SET "
+    updateOne: function(keyValues, burgerId, cb) {
+        var queryString = "INSERT INTO burgers SET "
             + sqlPair(keyValues) + " WHERE "
-            + condition;
+            + burgerId;
 
         console.log(queryString);
-
+        // if there is an error it will console log or it will console.log the result
         connection.query(queryString, function(err, result) {
             if (err) {
                 throw err
@@ -81,11 +81,11 @@ var orm = {
             cb(result);
         });
     },
-    deleteOne: function(condition, cb) {
-        var queryString = "DELETE FROM burger WHERE " + condition;
-
+    deleteOne: function(burgerId, cb) {
+        var queryString = "DELETE FROM burgers WHERE " + burgerId;
+        
         console.log(queryString);
-
+        // if there is an error it will console log or it will console.log the result
         connection.query(queryString, function(err, result) {
             if (err) {
                 throw err
