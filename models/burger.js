@@ -8,18 +8,18 @@ var burger = {
             cb(res);
         });
     },
-    insertOne: function(colToSearch, values, cb) {
-        orm.insertOne(colToSearch, values, function(res) {
+    insertOne: function(cols, vals, cb) {
+        orm.insertOne(cols, vals, function(res) {
             cb(res);
         });
     },
-    updateOne: function(keyValues, burgerId, cb) {
-        orm.updateOne(keyValues, burgerId, function(res) {
+    updateOne: function(objColVals, condition, cb) {
+        orm.updateOne(objColVals, condition, function(res) {
             cb(res);
         });
     },
-    deleteOne: function(burgerId, cb) {
-        orm.deleteOne(burgerId, function(res) {
+    deleteOne: function(condition, cb) {
+        orm.deleteOne(condition, function(res) {
             cb(res)
         });
     }

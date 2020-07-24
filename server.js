@@ -5,11 +5,11 @@ var PORT = process.env.PORT || 8000;
 // sets variable to hold expresss
 var app = express();
 
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-
 // serves app's static content from "public"
 app.use(express.static("public"));
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 // requires handlebars and sets app engine to handlebars
 var exphbs = require("express-handlebars");

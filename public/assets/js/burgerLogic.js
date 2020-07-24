@@ -1,7 +1,7 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(function() {
-    $(".devour-btn").on("click", function(event) {
-      var id = $(this).data("id");
+    $(".change-devoured").on("click", function(event) {
+      var id = $(this).data("burger_id");
       var newDevour = $(this).data("newDevour");
   
       var devouredState = {
@@ -14,7 +14,7 @@ $(function() {
         data: devouredState
       }).then(
         function() {
-          console.log("changed devoured to", devoured);
+          console.log("changed devoured to", newDevour);
           // Reload the page to get the updated list
           location.reload();
         }
@@ -26,7 +26,9 @@ $(function() {
       event.preventDefault();
   
       var newBurger = {
+        // takes the burger name and gets the inputted value
         name: $("#burger-name").val().trim(),
+        // checks if the devoured bubble is marked
         devoured: $("[name=devoured]:checked").val().trim()
       };
   
@@ -44,7 +46,7 @@ $(function() {
     });
   
     $(".delete-burger").on("click", function(event) {
-      var id = $(this).data("id");
+      var id = $(this).data("burger_id");
   
       // Send the DELETE request.
       $.ajax("/api/burgers/" + id, {
