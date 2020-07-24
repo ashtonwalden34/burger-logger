@@ -14,23 +14,23 @@ function qmString(num) {
    return questionMarks.toString();
 }
 
-
-function sqlPair(object) {
+// converts object key value pairs to sql syntax
+function sqlPair(ob) {
     // array to hold key value pairs
     var keyValuePairs = []
 
     // goes through keys and adds key value pair to keyValuePairs array
-    for (var key in object) {
-        var keyValue = object[key];
+    for (var key in ob) {
+        var keyValue = ob[key];
         
         // checks to see if object was assigned it's own property
-        if (Object.hasOwnProperty.call(object, keyValue)) {
+        if (Object.hasOwnProperty.call(ob, key)) {
             // if the string has spaces it will add quotation marks to preserve the value
             if (typeof value === "string" && value.indexOf(" ") >= 0) {
-              value = "'" + value + "'";
+              keyValue = "'" + keyValue + "'";
             }
             // pushes key (ex: name) and value to array
-            keyValuePairs.push(keyValue + "=" + value);
+            keyValuePairs.push(key + "=" + value);
           }
     }
     // parses contents of keyValuePairs array to string
@@ -46,30 +46,30 @@ var orm = {
             if (err) {
                 throw err;
             }
-            console.log(result);
+            // console.log(result);
             cb(result);
         });
     },
-    insertOne: function(colToSearch, values, cb) {
+    insertOne: function(cols, vals, cb) {
         var queryString = "INSERT INTO burgers (" 
-            + colToSearch.toString() 
+            + cols.toString() 
             + ") VALUES (" 
-            + qmString(values.length) + ")";
+            + qmString(vals.length) + ")";
 
         console.log(queryString);
         // if there is an error it will console log or it will console.log the result 
-        connection.query(queryString, values, function(err, result) {
+        connection.query(queryString, vals, function(err, result) {
             if (err) {
                 throw err;
             }
-            console.log(result);
+            // console.log(result);
             cb(result);
         });
     },
-    updateOne: function(keyValues, burgerId, cb) {
+    updateOne: function(objColVals, condition, cb) {
         var queryString = "INSERT INTO burgers SET "
-            + sqlPair(keyValues) + " WHERE "
-            + burgerId;
+            + sqlPair(objColVals) + " WHERE "
+            + condition;
 
         console.log(queryString);
         // if there is an error it will console log or it will console.log the result
@@ -81,8 +81,8 @@ var orm = {
             cb(result);
         });
     },
-    deleteOne: function(burgerId, cb) {
-        var queryString = "DELETE FROM burgers WHERE " + burgerId;
+    deleteOne: function(condition, cb) {
+        var queryString = "DELETE FROM burgers WHERE " + condition;
         
         console.log(queryString);
         // if there is an error it will console log or it will console.log the result

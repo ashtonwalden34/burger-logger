@@ -7,7 +7,7 @@ var connection = mysql.createConnection({
     port: 3306,
     user: "root",
     password: "password",
-    // selects employee-management-system database
+    // selects burger logger database
     database: "burger_logger_db"
 });
 

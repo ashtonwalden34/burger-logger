@@ -8,6 +8,9 @@ var app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+// serves app's static content from "public"
+app.use(express.static("public"));
+
 // requires handlebars and sets app engine to handlebars
 var exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
