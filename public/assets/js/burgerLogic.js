@@ -1,5 +1,5 @@
-// Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(function() {
+  // once the "change-devoured" button is clicked it will save new data in devoured state variable
     $(".change-devoured").on("click", function(event) {
       var id = $(this).data("burger_id");
       var newDevour = $(this).data("newDevour");
@@ -8,38 +8,39 @@ $(function() {
         devoured: newDevour
       };
   
-      // Send the PUT request.
+      // sends data to the database to update
       $.ajax("/api/burgers/" + id, {
         type: "PUT",
         data: devouredState
       }).then(
         function() {
           console.log("changed devoured to", newDevour);
-          // Reload the page to get the updated list
+          // page reloads, which means it automatically brings in updated data from db
           location.reload();
         }
       );
     });
   
+    // button to add new burger to database
     $(".create-form").on("submit", function(event) {
-      // Make sure to preventDefault on a submit event.
+      // prevenets a submit event
       event.preventDefault();
   
       var newBurger = {
-        // takes the burger name and gets the inputted value
+        // takes the burger name and gets the input value
         name: $("#burger-name").val().trim(),
-        // checks if the devoured bubble is marked
+        // checks if the devoured bubble is marked and takes the value
         devoured: $("[name=devoured]:checked").val().trim()
       };
   
-      // Send the POST request.
+      // sends data to data base to add
       $.ajax("/api/burgers", {
         type: "POST",
         data: newBurger
       }).then(
         function() {
           console.log("created new burger: " + newBurger);
-          // Reload the page to get the updated list
+          // reloads page, which gets new data from database
           location.reload();
         }
       );
