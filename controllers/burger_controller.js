@@ -76,3 +76,6 @@ router.delete("/api/burgers/:burger_id", function(req, res) {
         }
     });
 });
+
+// exports router object for server to use
+module.exports = router;
