@@ -22,7 +22,7 @@ router.get("/", function(req, res) {
 router.post("/api/burgers", function(req, res) {
     // inserts a burger based on name and if it was devoured or not
     burger.insertOne(["burger_name, devoured"], 
-        [req.body.burger_name, req.body.devoured], 
+        [req.body.name, req.body.devoured], 
         function(result) {
             // send back id of newly added burger
             res.json({ id: result.insertId });

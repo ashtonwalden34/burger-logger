@@ -67,8 +67,8 @@ var orm = {
         });
     },
     updateOne: function(objColVals, condition, cb) {
-        var queryString = "INSERT INTO burgers SET "
-            + sqlPair(objColVals) + " WHERE "
+        var queryString = "UPDATE burgers SET "
+            + "devoured = true" + " WHERE "
             + condition;
 
         console.log(queryString);

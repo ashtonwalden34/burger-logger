@@ -1,7 +1,7 @@
 $(function() {
   // once the "change-devoured" button is clicked it will save new data in devoured state variable
     $(".change-devoured").on("click", function(event) {
-      var id = $(this).data("burger_id");
+      var id = $(this).data("id");
       var newDevour = $(this).data("newDevour");
   
       var devouredState = {
@@ -30,7 +30,7 @@ $(function() {
         // takes the burger name and gets the input value
         name: $("#burger-name").val().trim(),
         // checks if the devoured bubble is marked and takes the value
-        devoured: $("[name=devoured]:checked").val().trim()
+        devoured: false
       };
   
       // sends data to data base to add
