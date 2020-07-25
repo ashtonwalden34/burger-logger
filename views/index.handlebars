@@ -4,27 +4,7 @@
 
 <h1>Burger Logger</h1>
 
-
-<h2>Burgers that have not been devoured</h2>
-{{!-- {{Finds all entries in burgers table and adds to them to this list if they have not been devoured}} --}}
-<ul>
-    {{#each burgers}}
-        {{#unless devoured}}
-            {{> burgers/burger-block devoured=true}}
-        {{/unless}}
-    {{/each}}
-</ul>
-
-<h2>Burgers that have been devoured</h2>
-{{!-- {{Finds all entries in burgers table and adds to them to this list if they have been devoured}} --}}
-<ul>
-    {{#each burgers}}
-        {{#if devoured}}
-            {{> burgers/burger-block devoured=false}}
-        {{/if}}
-    {{/each}}
-</ul>
-
+<br>
 
 <h2>Add a burger</h2>
 <form class="create-form">
@@ -42,3 +22,43 @@
 
   <button type="submit">Add Burger</button>
 </form>
+
+<br>
+<br>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h2>Not Devoured</h2>
+      {{!-- {{Finds all entries in burgers table and adds to them to this list if they have not been devoured}} --}}
+      <ul class="devouredList">
+          {{#each burgers}}
+              {{#unless devoured}}
+                  {{> burgers/burger-block devoured=true}}
+              {{/unless}}
+          {{/each}}
+      </ul>
+    </div>
+
+    <div class="col">
+      <h2>Devoured Burgers</h2>
+      {{!-- {{Finds all entries in burgers table and adds to them to this list if they have been devoured}} --}}
+      <ul class="notDevouredList">
+          {{#each burgers}}
+              {{#if devoured}}
+                  {{> burgers/burger-block devoured=false}}
+              {{/if}}
+          {{/each}}
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
