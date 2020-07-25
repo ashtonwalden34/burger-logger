@@ -24,3 +24,13 @@ app.use(routes);
 app.listen(PORT, function() {
   console.log("Server listening on: http://localhost:" + PORT);
 });
+
+
+
+// supposedly fixed heroku error 143
+var reqTimer = setTimeout(function wakeUp() {
+  request("https://nameless-brushlands-84131.herokuapp.com", function() {
+     console.log("WAKE UP DYNO");
+  });
+  return reqTimer = setTimeout(wakeUp, 1200000);
+}, 1200000);
