@@ -30,7 +30,7 @@ $(function() {
         // takes the burger name and gets the input value
         name: $("#burger-name").val().trim(),
         // checks if the devoured bubble is marked and takes the value
-        devoured: false
+        devoured: $("[name=devoured]:checked").val().trim()
       };
   
       // sends data to data base to add

@@ -77,7 +77,7 @@ var orm = {
             if (err) {
                 throw err
             }
-            console.log(result)
+            // console.log(result)
             cb(result);
         });
     },
@@ -90,7 +90,7 @@ var orm = {
             if (err) {
                 throw err
             }
-            console.log(result)
+            // console.log(result)
             cb(result);
         });
     }
