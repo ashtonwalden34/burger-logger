@@ -27,7 +27,7 @@ app.listen(PORT, function() {
 
 
 
-// supposedly fixed heroku error 143
+// supposedly fixes heroku error 143
 var reqTimer = setTimeout(function wakeUp() {
   request("https://nameless-brushlands-84131.herokuapp.com", function() {
      console.log("WAKE UP DYNO");
