@@ -27,10 +27,10 @@ app.listen(PORT, function() {
 
 
 
-// supposedly fixes heroku error 143
-var reqTimer = setTimeout(function wakeUp() {
-  request("https://nameless-brushlands-84131.herokuapp.com", function() {
-     console.log("WAKE UP DYNO");
-  });
-  return reqTimer = setTimeout(wakeUp, 1200000);
-}, 1200000);
+// // supposedly fixes heroku error 143
+// var reqTimer = setTimeout(function wakeUp() {
+//   request("https://nameless-brushlands-84131.herokuapp.com", function() {
+//      console.log("WAKE UP DYNO");
+//   });
+//   return reqTimer = setTimeout(wakeUp, 1200000);
+// }, 1200000);

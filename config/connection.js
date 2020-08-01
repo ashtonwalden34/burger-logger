@@ -19,7 +19,7 @@ if (process.env.JAWSDB_URL) {
         host: 'localhost',
         user: 'root',
         password: 'password',
-        database: burger_logger_db
+        database: 'burger_logger_db'
     });
 };
 
