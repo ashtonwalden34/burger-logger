@@ -14,7 +14,7 @@ $(function() {
         data: devouredState
       }).then(
         function() {
-          console.log("changed devoured to", newDevour);
+          // console.log("changed devoured to", newDevour);
           // page reloads, which means it automatically brings in updated data from db
           location.reload();
         }
@@ -39,7 +39,7 @@ $(function() {
         data: newBurger
       }).then(
         function() {
-          console.log("created new burger: " + newBurger);
+          // console.log("created new burger: " + newBurger);
           // reloads page, which gets new data from database
           location.reload();
         }

@@ -56,7 +56,7 @@ var orm = {
             + ") VALUES (" 
             + qmString(vals.length) + ")";
 
-        console.log(queryString);
+        // console.log(queryString);
         // if there is an error it will console log or it will console.log the result 
         connection.query(queryString, vals, function(err, result) {
             if (err) {
@@ -71,7 +71,7 @@ var orm = {
             + "devoured = true" + " WHERE "
             + condition;
 
-        console.log(queryString);
+        // console.log(queryString);
         // if there is an error it will console log or it will console.log the result
         connection.query(queryString, function(err, result) {
             if (err) {
