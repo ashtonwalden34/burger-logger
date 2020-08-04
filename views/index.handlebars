@@ -32,11 +32,11 @@
       <h2>Not Devoured</h2>
       {{!-- {{Finds all entries in burgers table and adds to them to this list if they have not been devoured}} --}}
       <ul class="devouredList">
-          {{!-- {{#each burgers}}
+          {{#each burgers}}
               {{#unless devoured}}
                   {{> burgers/burger-block devoured=true}}
               {{/unless}}
-          {{/each}} --}}
+          {{/each}}
       </ul>
     </div>
 
@@ -44,11 +44,11 @@
       <h2>Devoured Burgers</h2>
       {{!-- {{Finds all entries in burgers table and adds to them to this list if they have been devoured}} --}}
       <ul class="notDevouredList">
-          {{!-- {{#each burgers}}
+          {{#each burgers}}
               {{#if devoured}}
                   {{> burgers/burger-block devoured=false}}
               {{/if}}
-          {{/each}} --}}
+          {{/each}}
       </ul>
     </div>
   </div>
