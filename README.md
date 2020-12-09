@@ -14,8 +14,8 @@ This app allows the user to enter the name of a burger and mark whether it has b
 - jQuery
 
 # Links
-GitHub Repository: https://github.com/ashtonwalden34/burger-logger
-Deployed application: https://nameless-brushlands-84131.herokuapp.com/
+- [GitHub Repository](https://github.com/ashtonwalden34/burger-logger)
+- [Deployed application](https://nameless-brushlands-84131.herokuapp.com/)
 
 # Road Map
 - Functioning delete button to remove burgers from database
