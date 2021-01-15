@@ -1,0 +1,14 @@
+#bt {
+    color: blue;
+}
+
+#bi {
+    color: red;
+}
+
+/* 
+Add id for each generated burger
+    - Devoured burgers have different id from not devoured burgers???
+    - Styling of 'bubble' can be the same between burgers
+    - Add to section of code where burgers are generated upon input
+*/

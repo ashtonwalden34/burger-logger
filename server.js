@@ -8,6 +8,7 @@ var app = express();
 // serves app's static content from "public"
 app.use(express.static("public"));
 
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
