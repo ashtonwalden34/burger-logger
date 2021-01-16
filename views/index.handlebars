@@ -41,8 +41,12 @@
     .notDevouredList {
       border: solid blue 1px;
     }
-    
-    
+
+    #burger {
+      color: blue;
+      background-color: red;
+    }
+
   </style>
 
 <div id="wrapper">
@@ -89,7 +93,7 @@
       <h2>Devoured Burgers</h2>
       {{!-- {{Finds all entries in burgers table and adds to them to this list if they have been devoured}} --}}
       <ul class="notDevouredList">
-          {{#each burgers}}
+          {{#each burgers }}
               {{#if devoured}}
                   {{> burgers/burger-block devoured=false}}
               {{/if}}
