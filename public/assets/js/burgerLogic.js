@@ -52,6 +52,7 @@ $(function() {
 
   // Starting to make delete function  
       $(".delete-burger").on("click", function(event) {
+        // gets id off the burger selected
         var id = $(this).data("id");
         
         var newDelete = $(this).data("newDelete");
