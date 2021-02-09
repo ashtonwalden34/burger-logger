@@ -24,12 +24,12 @@
     }
 
     #bt {
-      color: blue;
+      color: black;
       display: inline-block;
-      border: solid black 1px;
       margin-left: auto;
       margin-right: auto;
       font-family: fantasy;
+      text-decoration: underline gray;
     }
 
     #burgerForm {
@@ -39,19 +39,29 @@
       border: solid black 4px;
       border-radius: 4px;
       width: 50%;
+      background-color: gray;
     }
 
-    #devouredCheck {
-      display: inline;
+    #burgerLabel {
+      font-family: fantasy;
+      color: black;
+      text-decoration: underline gray;
     }
 
     #notDevouredCheck {
+      display: inline;
+    }
+
+    #devouredCheck {
       display: inline;
       margin-left: 10%;
     }
 
     #bi {
-      color: blue;
+      margin-top: 2%;
+      color: black;
+      font-family: fantasy;
+      text-decoration: underline gray;
     }
 
     .devouredList {
@@ -63,8 +73,8 @@
     }
 
     #burger {
-      color: blue;
-      background-color: red;
+      color: black;
+      background-color: gray;
     }
 
   </style>
@@ -85,9 +95,10 @@
   </div>
 
   <div class="form-group">
-    <label for="devoured">Devoured?</label><br>
-    <input id="devouredCheck" type="radio" name="devoured" value="1" checked> Devoured
+    <h5 id="burgerLabel">Has the burger been devoured?</h5>
+    {{!-- <label id="bugerLabel" for="devoured">Devoured?</label><br> --}}
     <input id="notDevouredCheck" type="radio" name="devoured" value="0"> Not devoured
+    <input id="devouredCheck" type="radio" name="devoured" value="1" checked> Devoured
   </div>
 
   <button type="submit">Add Burger</button>
@@ -99,7 +110,7 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <h2>Not Devoured</h2>
+      <h2 id='notDevouredLabel'>Not Devoured</h2>
       {{!-- {{Finds all entries in burgers table and adds to them to this list if they have not been devoured}} --}}
       <ul class="devouredList">
           {{#each burgers}}
@@ -111,7 +122,7 @@
     </div>
 
     <div class="col">
-      <h2>Devoured Burgers</h2>
+      <h2 id='devouredLabel'>Devoured Burgers</h2>
       {{!-- {{Finds all entries in burgers table and adds to them to this list if they have been devoured}} --}}
       <ul class="notDevouredList">
           {{#each burgers }}

@@ -82,19 +82,19 @@ var orm = {
         });
     },
     // function to delete from db
-        // deleteOne: function(condition, cb) {
-        //     var queryString = "DELETE FROM burgers WHERE " + condition;
+        deleteOne: function(condition, cb) {
+            var queryString = "DELETE FROM burgers WHERE " + condition;
             
-        //     console.log(queryString);
-        //     // if there is an error it will console log or it will console.log the result
-        //     connection.query(queryString, function(err, result) {
-        //         if (err) {
-        //             throw err
-        //         }
-        //         // console.log(result)
-        //         cb(result);
-        //     });
-        // }
+            console.log(queryString);
+            // if there is an error it will console log or it will console.log the result
+            connection.query(queryString, function(err, result) {
+                if (err) {
+                    throw err
+                }
+                // console.log(result)
+                cb(result);
+            });
+        }
 };
 
 // exports orm object

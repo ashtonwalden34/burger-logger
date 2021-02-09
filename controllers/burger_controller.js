@@ -50,25 +50,25 @@ router.put("/api/burgers/:burger_id", function(req, res) {
 });
 
 // creates route to delete the burger
-    // router.delete("/api/burgers/:burger_id", function(req, res) {
-    //     var condition = "burger_id = " + req.params.burger_id;
+    router.delete("/api/burgers/:burger_id", function(req, res) {
+        var condition = "burger_id = " + req.params.burger_id;
 
-    //     console.log("this is the condition " + condition)
-    //     // console logs the burger id
-    //         // console.log("Burger Id: " + condition);
-    //     // deletes burger from database based on burger_id
-    //     burger.deleteOne({
-    //         burger_id: req.body.burger_id},
-    //         condition, function(result) {
-    //         if (result.affectedRow == 0) {
-    //             // if no rows are changed then the id must not exist, so 404 error is shown
-    //             return res.status(404).end();
-    //         } else {
-    //             // if at least one row is affected then it will return a succesful code
-    //             res.status(200).end();
-    //         }
-    //     });
-    // });
+        console.log("this is the condition " + condition)
+        // console logs the burger id
+            // console.log("Burger Id: " + condition);
+        // deletes burger from database based on burger_id
+        burger.deleteOne({
+            burger_id: req.body.burger_id},
+            condition, function(result) {
+            if (result.affectedRow == 0) {
+                // if no rows are changed then the id must not exist, so 404 error is shown
+                return res.status(404).end();
+            } else {
+                // if at least one row is affected then it will return a succesful code
+                res.status(200).end();
+            }
+        });
+    });
 
 // exports router object for server to use
 module.exports = router;
