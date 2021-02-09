@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../public/assets/css/style.css">
+    <link rel="icon" href="https://img.icons8.com/cotton/64/000000/beefburger.png">
 </head>
 
 
@@ -28,6 +29,25 @@
       border: solid black 1px;
       margin-left: auto;
       margin-right: auto;
+      font-family: fantasy;
+    }
+
+    #burgerForm {
+      display: inline-block;
+      margin-left: auto;
+      margin-right: auto;
+      border: solid black 4px;
+      border-radius: 4px;
+      width: 50%;
+    }
+
+    #devouredCheck {
+      display: inline;
+    }
+
+    #notDevouredCheck {
+      display: inline;
+      margin-left: 10%;
     }
 
     #bi {
@@ -55,8 +75,9 @@
 
 <br>
 
-<h2 id="bi">Add a burger</h2>
-<form class="create-form">
+
+<form class="create-form" id="burgerForm">
+  <h2 id="bi">Add a burger</h2>
 
   <div class="form-group">
     <label for="burger-name">Burger:</label>
@@ -65,8 +86,8 @@
 
   <div class="form-group">
     <label for="devoured">Devoured?</label><br>
-    <input type="radio" name="devoured" value="1" checked> Devoured<br>
-    <input type="radio" name="devoured" value="0"> Not devoured
+    <input id="devouredCheck" type="radio" name="devoured" value="1" checked> Devoured
+    <input id="notDevouredCheck" type="radio" name="devoured" value="0"> Not devoured
   </div>
 
   <button type="submit">Add Burger</button>
